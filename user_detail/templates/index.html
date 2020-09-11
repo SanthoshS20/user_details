@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Profile</title>
+</head>
+<body>
+<form action="/delete/" method="POST"> {% csrf_token %}
+  <select name="dropdown">
+    {% for username in username_list %}
+      <option>{{username}}</option>
+    {% endfor %}
+  </select>
+  <input type="submit" value="Delete">
+</form>
+<a href="/logout/"><button><span>Logout</span></button></a>
+</body>
+</html>
